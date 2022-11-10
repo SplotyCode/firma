@@ -2,6 +2,14 @@
     font-family: "FREESCPT";
     src: url(font/FREESCPT.TTF) format("truetype");
 }
+@font-face {
+    font-family: "slogan";
+    src: url(font/a.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Font Awesome";
+    src: url(font/free-fa-solid-900.woff2) format("woff2");
+}
 :root {
     --color-blue: #2697cc;
     --color-back: black;
@@ -34,16 +42,45 @@ p, h2 {
                 linear-gradient(336deg, transparent, rgba(0,0,255,0) 70.71%);
 }
 header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
     display: flex;
     align-items: center;
+    background: linear-gradient(270deg, rgba(133,221,197,0.8) 0%, rgba(88,167,246,0.8) 100%);
+}
+header img {
+    display: block;
+    width: 100px;
 }
 header span {
-    margin-left: 1.2em;
-    font-size: 6.5em;
+    margin-left: 0.5em;
+    font-size: 6em;
     font-family: 'FREESCPT';
     color: white;
+    transition: font-size 0.2s;
+}
+nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+/*nav a:hover {
+    padding: 12px;
+}*/
+nav a {
+    color: inherit;
+    margin: 8px;
+    padding: 10px;
+    transition: all 0.3;
+    text-decoration: none;
+}
+nav .active {
+    border-bottom: 2px solid var(--color-blue);
 }
 main {
+    padding-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,13 +94,18 @@ main strong {
 content .model {
     border: 2px solid var(--color-gray);
 }
-.slogan, .contact {
-    display: contents;
+.slogan {   
+    color: white;
+    font-family: "slogan";
+    letter-spacing: -0.1px;
+    font-size: 50px;
+    line-height: 0.9;
 }
 .slogan h2:first-of-type {
     margin-top: 2em;
 }
 .contact {
+    display: contents;
     font-size: 0.6em;
     height: 200px;
 }
@@ -71,8 +113,7 @@ content .model {
     margin-top: 2em;
 }
 main button {
-    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
-
+    border: 0;
     margin: 0;
     margin-top: 25px;
     background: url("img/button.png"), linear-gradient(to left, #205ed0 0%, #00ccfe 100%);
@@ -104,10 +145,10 @@ main button::before {
     left: 60px;
     z-index: 1;
     content: "\f073";
-    font-family: "Font Awesome 6 Free";
+    font-family: "Font Awesome";
 }
 main, button {
-    font-family: 'Montserrat';
+    font-family: "Montserrat", sans-serif;
 }
 .background {
     position: absolute;

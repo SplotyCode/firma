@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Platzhalter</title>
-    <script src="https://kit.fontawesome.com/a63025b49d.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
     <div class="background"></div>
     <div class="overlay"></div>
     <div class="hr"></div>
     <header>
-        <!--<img src="img/logo.png">-->
+        <div>
+            <img src="img/logo">
+        </div>
         <span>Buisness reinvented.</span>
+        <nav>
+            <ul>
+                <li><a class="active" href="#hey1">Nav 1</a></li>
+                <li><a href="#hey2">Nav 2</a></li>
+                <li><a href="#hey3">Nav 3</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <div class="slogan">
@@ -33,5 +40,34 @@
         <p><mark>WARUM</mark> solltest du dein Buisness mit uns</p>
         <p class="model">Erklärung unserers Buisnessmodells. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At</p>
         --></content>
+    <script>
+        let header = document.querySelector("header");
+        let sections = document.querySelectorAll("section");
+        let base = parseFloat(window.getComputedStyle(header, null).getPropertyValue('font-size'));
+        for (const section of document.querySelectorAll("nav a")) {
+            section.addEventListener("click", (event) => {
+                event.preventDefault();
+                scroll({
+                    top: document.querySelector(event.target.getAttribute("href")).offsetTop - 50,
+                    behavior: "smooth"
+                });
+            });
+        }
+        window.onscroll = function() {
+            let scroll = document.documentElement.scrollTop;
+            let font = base * (scroll > 50 ? 0.6 : 1);
+            header.style.fontSize = font + 'px';
+
+            sections.forEach(current => {
+                let height = current.offsetHeight;
+                let start = current.getBoundingClientRect().top + window.pageYOffset - 50;
+                let scroll = window.pageYOffset;
+                if (start < scroll && (start + height) >= scroll) {
+                    document.querySelectorAll(".active").forEach(selected => selected.classList.remove("active"));
+                    document.querySelector("nav a[href='#" + current.getAttribute("id") + "']").classList.add("active");
+                }
+            });
+        }
+    </script>
 </body>
 </html>
