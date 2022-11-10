@@ -71,6 +71,10 @@ content .model {
     margin-top: 2em;
 }
 main button {
+    border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+
+    margin: 0;
+    margin-top: 25px;
     background: url("img/button.png"), linear-gradient(to left, #205ed0 0%, #00ccfe 100%);
     box-shadow: 0px 2px 96px 1px #b0c4e3;
     background-position: center;
@@ -86,7 +90,9 @@ main button {
     font-weight: 600;
     transition: all 0.3s ease;
     position: relative;
-    top: 0;
+}
+main button:hover {
+    margin-top: 15px;
 }
 main button::before {
     position: absolute;
@@ -108,7 +114,7 @@ main, button {
     right: 0;
     top: 15vh;
     z-index: -1;
-    background-image: url(img/bg.png);
+    background-image: url(img/Free\ Business\ Teamwork\ Illustration-SVG.svg);
     background-repeat: no-repeat;
     width: 50%;
     height: 60vh;
