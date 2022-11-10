@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "FREESCPT";
+    src: url(font/FREESCPT.TTF) format("truetype");
+}
+:root {
+    --color-blue: #2697cc;
+    --color-back: black;
+    --color-gray: gray;
+}
+body {
+    margin: 0px;
+}
+hr {
+    color: var(--color-blue);
+    width: 65%;
+}
+mark {
+    background-color: transparent;
+    color: var(--color-blue);
+}
+p {
+    font-size: 2em;
+}
+p, h2 {
+    margin: 0;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+    height: 120vh;
+    background: linear-gradient(217deg, rgba(133,221,197,0.8), rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, rgba(88,167,246,0.8), rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, transparent, rgba(0,0,255,0) 70.71%);
+}
+header {
+    display: flex;
+    align-items: center;
+}
+header span {
+    margin-left: 1.2em;
+    font-size: 6.5em;
+    font-family: 'FREESCPT';
+    color: white;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 2em;
+}
+main strong {
+    color: var(--color-blue);
+}
+content .model {
+    border: 2px solid var(--color-gray);
+}
+.slogan, .contact {
+    display: contents;
+}
+.slogan h2:first-of-type {
+    margin-top: 2em;
+}
+.contact {
+    font-size: 0.6em;
+    height: 200px;
+}
+.contact h2:first-of-type {
+    margin-top: 2em;
+}
+main button {
+    background: url("img/button.png"), linear-gradient(to left, #205ed0 0%, #00ccfe 100%);
+    box-shadow: 0px 2px 96px 1px #b0c4e3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+    padding: 25px 75px 25px 100px;
+    letter-spacing: -0.1px;
+    color: white;
+    border-radius: 100px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+}
+main button::before {
+    position: absolute;
+    width: 11px;
+    height: 10px;
+    top: 50%;
+    font-size: 30px;
+    margin-top: -15px;
+    left: 60px;
+    z-index: 1;
+    content: "\f073";
+    font-family: "Font Awesome 6 Free";
+}
+main, button {
+    font-family: 'Montserrat';
+}
+.background {
+    position: absolute;
+    right: 0;
+    top: 15vh;
+    z-index: -1;
+    background-image: url(img/bg.png);
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 60vh;
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hr {
+    position: absolute;
+    right: 0;
+    top: 80vh;
+    z-index: -1;
+    background-image: url(img/hr.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+}
