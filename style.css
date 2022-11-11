@@ -1,10 +1,12 @@
 @font-face {
     font-family: "FREESCPT";
     src: url(font/FREESCPT.TTF) format("truetype");
+    font-display: swap;
 }
 @font-face {
     font-family: "slogan";
     src: url(font/a.ttf) format("truetype");
+    font-display: swap;
 }
 @font-face {
     font-family: "Font Awesome";
