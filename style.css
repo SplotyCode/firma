@@ -161,6 +161,7 @@ content .model {
     text-align: center;
     font-weight: bold;
     font-size: 55px;
+    margin-bottom: 25px;
 }
 .box p, .box h2 {
     color: #272727;
@@ -175,7 +176,7 @@ content .model {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
 }
 main button {
