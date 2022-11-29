@@ -13,9 +13,14 @@
     src: url(font/free-fa-solid-900.woff2) format("woff2");
 }
 :root {
+    --color-text: white;
     --color-blue: #2697cc;
     --color-back: black;
     --color-gray: gray;
+    --color-gradient-1: rgba(133,221,197,0.8);
+    --color-gradient-2: rgba(88,167,246,0.8);
+    --page-margin-left: calc(10rem - 15px);
+    --page-margin-right: 9rem;
 }
 body {
     margin: 0px;
@@ -32,7 +37,7 @@ p {
     font-size: 2em;
 }
 p, h2 {
-    color: white;
+    color: var(--color-text);
     margin: 0;
 }
 .overlay {
@@ -40,8 +45,8 @@ p, h2 {
     width: 100%;
     z-index: -2;
     height: 120vh;
-    background: linear-gradient(217deg, rgba(133,221,197,0.8), rgba(255,0,0,0) 70.71%),
-                linear-gradient(127deg, rgba(88,167,246,0.8), rgba(0,255,0,0) 70.71%),
+    background: linear-gradient(217deg, var(--color-gradient-1), rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, var(--color-gradient-2), rgba(0,255,0,0) 70.71%),
                 linear-gradient(336deg, transparent, rgba(0,0,255,0) 70.71%);
 }
 header {
@@ -51,25 +56,25 @@ header {
     top: 0;
     display: flex;
     align-items: center;
-    background: linear-gradient(270deg, rgba(133,221,197,0.8) 0%, rgba(88,167,246,0.8) 100%);
+    background: linear-gradient(270deg, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
 }
 header img {
     display: inline-block;
     width: 100px;
-    margin-left: calc(10rem - 15px);
+    margin-left: var(--page-margin-left);
 }
 header span {
     margin-left: 0.5em;
     font-size: 6em;
     font-family: 'FREESCPT';
-    color: white;
+    color: var(--color-text);
     transition: font-size 0.2s;
 }
 nav {
-    color: white;
+    color: var(--color-text);
     margin-left: auto;
     order: 2;
-    padding-right: 9rem;
+    padding-right: var(--page-margin-right);
 }
 nav li {
     list-style: none;
@@ -90,13 +95,13 @@ nav .active {
     border-bottom: 2px solid var(--color-blue);
 }
 main {
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
     font-size: 2em;
+    margin-left: var(--page-margin-left);
+    margin-right: var(--page-margin-right);
+}
+.landing {
+    padding-top: 3rem;
+    display: inline-block;
 }
 main strong {
     color: var(--color-blue);
@@ -105,7 +110,7 @@ content .model {
     border: 2px solid var(--color-gray);
 }
 .slogan {   
-    color: white;
+    color: var(--color-text);
     font-family: "slogan";
     letter-spacing: -0.1px;
     font-size: 50px;
@@ -115,13 +120,45 @@ content .model {
     margin-top: 2em;
 }
 .contact {
-    color: white;
-    display: contents;
+    text-align: center;
+    color: var(--color-text);
     font-size: 0.6em;
     height: 200px;
 }
 .contact h2:first-of-type {
     margin-top: 2em;
+}
+.boxlist {
+    margin-left: calc(10rem - 15px);
+    display: flex;
+    justify-content: space-between;
+}
+.box {
+    background-color: #dfeffd;
+    width: 25%;
+    min-height: 450px;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0px 0px 163px -44px rgba(0, 0, 0, 0.47);
+    font-size: 24px;
+}
+.box h2 {
+    font-weight: bold;
+    font-size: 35;
+}
+.box p, .box h2 {
+    color: black;
+}
+.box img {
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 0 40px #888;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    text-align: center;
 }
 main button {
     border: 0;
@@ -137,7 +174,7 @@ main button {
     display: inline-block;
     padding: 25px 75px 25px 100px;
     letter-spacing: -0.1px;
-    color: white;
+    color: var(--color-text);
     border-radius: 100px;
     font-weight: 600;
     transition: all 0.3s ease;
