@@ -14,7 +14,7 @@
     <div class="overlay"></div>
     <div class="hr"></div>
     <header>
-        <img src="img/logo" alt="Jobia Logo">
+        <a href="#"><img src="img/logo" alt="Jobia Logo"></a>
         <span>Buisness reinvented.</span>
         <nav>
             <ul>
@@ -58,15 +58,22 @@
             -->
         </content>
     </main>
+    <footer>
+        <a href="#">Impressum</a>
+        <span>|</span>
+        <a href="#">Datenschutzerklärung</a>
+        <span>&#169; 2022 Jovia</span>
+    </footer>
     <script>
         let header = document.querySelector("header");
         let sections = document.querySelectorAll("section");
         let base = parseFloat(window.getComputedStyle(header, null).getPropertyValue('font-size'));
-        for (const section of document.querySelectorAll("nav a")) {
+        for (const section of document.querySelectorAll("header a")) {
             section.addEventListener("click", (event) => {
                 event.preventDefault();
+                let ref = event.target.getAttribute("href");
                 scroll({
-                    top: document.querySelector(event.target.getAttribute("href")).offsetTop - 50,
+                    top: ref === null ? 0 : document.querySelector(ref).offsetTop - 50,
                     behavior: "smooth"
                 });
             });
@@ -74,15 +81,17 @@
         window.onscroll = function() {
             let scroll = document.documentElement.scrollTop;
             let font = base * (scroll > 50 ? 0.6 : 1);
+            let active;
             header.style.fontSize = font + 'px';
 
             sections.forEach(current => {
                 let height = current.offsetHeight;
                 let start = current.getBoundingClientRect().top + window.pageYOffset - 50;
                 let scroll = window.pageYOffset;
-                if (start < scroll && (start + height) >= scroll) {
+                if (active != current && start < scroll && (start + height) >= scroll) {
                     document.querySelectorAll(".active").forEach(selected => selected.classList.remove("active"));
                     document.querySelector("nav a[href='#" + current.getAttribute("id") + "']").classList.add("active");
+                    active = current;
                 }
             });
         }
