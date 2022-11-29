@@ -4,21 +4,18 @@
     font-display: swap;
 }
 @font-face {
-    font-family: "slogan";
-    src: url(font/a.ttf) format("truetype");
-    font-display: swap;
-}
-@font-face {
     font-family: "Font Awesome";
     src: url(font/free-fa-solid-900.woff2) format("woff2");
 }
 @font-face {
     font-family: "nonito";
     src: url(font/nonito.ttf) format("truetype");
+    font-display: swap;
 }
 @font-face {
     font-family: "PT sans";
     src: url(font/PTSans-Regular.ttf) format("truetype");
+    font-display: swap;
 }
 :root {
     --color-text: white;
@@ -127,7 +124,6 @@ content .model {
 }
 .slogan {   
     color: var(--color-text);
-    font-family: "slogan";
     letter-spacing: -0.1px;
     font-size: 50px;
     line-height: 0.9;
